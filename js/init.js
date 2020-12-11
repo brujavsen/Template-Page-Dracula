@@ -6,14 +6,17 @@ const form = document.getElementById('login-form');
 
 //Change the color of body
 function colorChange() {
-    var bodyPage = document.body;
-    bodyPage.style.backgroundColor = bodyPage.style.backgroundColor == "black" ? "crimson" : "black"; 
+    form.style.backgroundColor = form.style.backgroundColor == "black" ? "crimson" : "black"; 
 }
 
 //Toggle button text
 function btnChange(){
     const value = btnForm.getAttribute('value') == "Let's go" ? "Ready to die?" : "Let's go";
     btnForm.setAttribute("value", value);
+}
+
+function btnColorChange(){
+    btnForm.style.backgroundColor = form.style.backgroundColor == "crimson" ? "black" : "crimson";
 }
 
 showPassword.addEventListener('click', ()=>{
@@ -27,6 +30,7 @@ showPassword.addEventListener('click', ()=>{
 var tmp = setInterval(()=>{
     colorChange();
     btnChange();
+    btnColorChange();
 },2000);
 
 console.log(inputUser.length);
